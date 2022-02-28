@@ -7,9 +7,9 @@ import './styles.css';
 import Tuiter from "./components/tuiter/tuiter";
 
 function App() {
-  return (
-    <Tuiter/>
-  );
+    return (
+        <Tuiter/>
+    );
 }
 
 export default App;
