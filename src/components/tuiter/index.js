@@ -14,38 +14,6 @@ import Lists from "../lists";
 import More from "../more";
 import {Login} from "../profile/login";
 
-<<<<<<< HEAD:src/components/tuiter/tuiter.js
-function Tuiter() {
-    return (
-        <BrowserRouter>
-            <div className="container">
-                <div className="ttr-tuiter">
-                    <div className="ttr-left-column">
-                        <Navigation/>
-                    </div>
-                    <div className="ttr-center-column">
-                        <Routes>
-                            <Route path="/" element={<Home/>}/>
-                            <Route path="/tuiter" element={<Home/>}/>
-                            <Route path="/home" element={<Home/>}/>
-                            <Route path="/explore" element={<Explore/>}/>
-                            <Route path="/notifications" element={<Notifications/>}/>
-                            <Route path="/messages" element={<Messages/>}/>
-                            <Route path="/bookmarks" element={<Bookmarks/>}/>
-                            <Route path="/lists" element={<Lists/>}/>
-                            <Route path="/profile" element={<Profile/>}/>
-                            <Route path="/profile/edit" element={<EditProfile/>}/>
-                            <Route path="/more" element={<More/>}/>
-                        </Routes>
-                    </div>
-                    <div className="ttr-right-column">
-                        <WhatsHappening/>
-                    </div>
-                </div>
-            </div>
-        </BrowserRouter>
-    );
-=======
 function Tuiter () {
   return(
     <HashRouter>
@@ -79,7 +47,6 @@ function Tuiter () {
       </div>
     </HashRouter>
   );
->>>>>>> a3:src/components/tuiter/index.js
 }
 
 export default Tuiter;

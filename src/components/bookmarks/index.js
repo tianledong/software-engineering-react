@@ -1,12 +1,6 @@
 import React from "react";
 import Tuits from "../tuits";
 
-<<<<<<< HEAD
-function Bookmarks() {
-    return (
-        <Tuits/>
-    );
-=======
 function Bookmarks () {
   return(
     <div>
@@ -14,7 +8,6 @@ function Bookmarks () {
       <Tuits/>
     </div>
   );
->>>>>>> a3
 }
 
 export default Bookmarks;
