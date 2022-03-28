@@ -1,6 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {profile} from "../../services/security-service";
+import * as likeService from "../../services/likes-service";
 
 const TuitStats = ({tuit, likeTuit = () => {}}) => {
+    const [isLiked, setIsLiked] = useState(false);
+
+    const initLike = async () => {
+        const user = await profile();
+        if (user) {
+            const isLikeVal = await likeService.isUserLikeTuit("me", tuit._id);
+            setIsLiked(isLikeVal.like);
+        }
+    }
+
+    useEffect(initLike, []);
+
     return (
       <div className="row mt-2">
         <div className="col">
@@ -14,11 +28,11 @@ const TuitStats = ({tuit, likeTuit = () => {}}) => {
         <div className="col">
           <span onClick={() => likeTuit(tuit)}>
               {
-                tuit.stats && tuit.stats.likes > 0 &&
+                tuit.stats && isLiked &&
                   <i className="fas fa-heart me-1" style={{color: 'red'}}/>
               }
               {
-                tuit.stats && tuit.stats.likes <= 0 &&
+                tuit.stats && isLiked===false &&
                   <i className="far fa-heart me-1"/>
               }
             {tuit.stats && tuit.stats.likes}
