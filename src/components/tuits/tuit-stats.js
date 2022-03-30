@@ -18,7 +18,7 @@ const TuitStats = ({
         }
     }
 
-    useEffect(initLike, []);
+    useEffect(initLike, [tuit.stats]);
 
     return (
         <div className="row mt-2">
@@ -31,21 +31,20 @@ const TuitStats = ({
                 {tuit.stats && tuit.stats.retuits}
             </div>
             <div className="col">
-          <span onClick={() => likeTuit(tuit).then(setIsDisliked(!isDisliked))}>
+          <span onClick={() => likeTuit(tuit)}>
               {
-                  tuit.stats && isLiked &&
-                  <i className="fas fa-heart me-1" style={{color: 'red'}}/>
+                  tuit.stats && isLiked===true &&
+                  <i className="fa-solid fa-thumbs-up me-1" style={{color: 'orangered'}}/>
               }
               {
                   tuit.stats && isLiked === false &&
-                  <i className="far fa-heart me-1"/>
+                  <i className="fa-solid fa-thumbs-up me-1"/>
               }
               {tuit.stats && tuit.stats.likes}
           </span>
             </div>
             <div className="col">
-          <span onClick={() => dislikeTuit(tuit)
-              .then(setIsDisliked(!isDisliked))}>
+          <span onClick={() => dislikeTuit(tuit)}>
               {
                   tuit.stats && isDisliked &&
                   <i className="fa-solid fa-thumbs-down me-1" style={{color: 'dodgerblue'}}/>
