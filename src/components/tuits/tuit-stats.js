@@ -47,7 +47,7 @@ const TuitStats = ({
           <span onClick={() => dislikeTuit(tuit)}>
               {
                   tuit.stats && isDisliked &&
-                  <i className="fa-solid fa-thumbs-down me-1" style={{color: 'dodgerblue'}}/>
+                  <i className="fa-solid fa-thumbs-down me-1" style={{color: 'blue'}}/>
               }
               {
                   tuit.stats && isDisliked === false &&
