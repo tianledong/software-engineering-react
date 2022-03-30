@@ -34,7 +34,7 @@ const TuitStats = ({
           <span onClick={() => likeTuit(tuit)}>
               {
                   tuit.stats && isLiked &&
-                  <i className="fa-solid fa-thumbs-up me-1" style={{color: 'red'}}/>
+                  <i className="fa-solid fa-thumbs-up me-1" style={{color: 'orangered'}}/>
               }
               {
                   tuit.stats && isLiked === false &&
