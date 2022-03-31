@@ -42,12 +42,7 @@ const TuitStats = ({
                 {tuit.stats && tuit.stats.retuits}
             </div>
             <div className="col">
-                <span onClick={async () => {
-                    await likeTuit(tuit);
-                    if (isDisliked) {
-                        await dislikeTuit(tuit);
-                    }
-                }}>
+                <span onClick={() => likeTuit(tuit)}>
               {
                   tuit.stats && isLiked === true &&
                   <i className="fa-solid fa-thumbs-up me-1" style={{color: 'orangered'}}/>
@@ -60,13 +55,9 @@ const TuitStats = ({
                 </span>
             </div>
             <div className="col">
-                <span onClick={async () => {
-                    await dislikeTuit(tuit)
-                    if (isLiked) {
-                        await likeTuit(tuit)
-                    }
-
-                }}>
+                <span onClick={() =>
+                     dislikeTuit(tuit)
+                }>
               {
                   tuit.stats && isDisliked === true &&
                   <i className="fa-solid fa-thumbs-down me-1" style={{color: 'dodgerblue'}}/>
