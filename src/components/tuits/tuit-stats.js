@@ -5,10 +5,10 @@ import * as dislikeService from "../../services/dislikes-service";
 
 /**
  *
- * @param tuit
- * @param likeTuit
- * @param dislikeTuit
- * @return {JSX.Element}
+ * @param tuit tuit
+ * @param likeTuit likeTuit function handles like tuit on click
+ * @param dislikeTuit likeTuit function handles like tuit on click
+ * @return {JSX.Element} <TuitStats/>
  * @constructor
  */
 const TuitStats = ({
